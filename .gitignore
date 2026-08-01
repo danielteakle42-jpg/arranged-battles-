@@ -1,0 +1,8 @@
+# Real Supabase keys and admin username live here — never commit this.
+config.js
+
+# Common junk
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
