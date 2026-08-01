@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Platinum Pulse x Void — Arranged Battle Booking</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -105,6 +106,7 @@
   .btn{
     border:none;border-radius:11px;padding:12px 16px;font-family:'Rajdhani',sans-serif;
     font-weight:700;font-size:15.5px;letter-spacing:0.03em;cursor:pointer;
+    white-space:normal;overflow-wrap:anywhere;text-align:center;
     transition:transform .12s ease, filter .12s ease, box-shadow .12s ease;
   }
   .btn:active{transform:scale(0.98);}
@@ -182,6 +184,7 @@
   }
   .dayview-row.mine{border-color:rgba(63,224,160,0.45);background:rgba(63,224,160,0.08);}
   .dayview-row .meta{flex:1;min-width:0;font-size:13px;line-height:1.4;}
+  .dayview-row .meta, .my-slot-row .meta, .pair-row .meta{overflow-wrap:anywhere;}
   .dayview-row .meta b{font-family:'Rajdhani',sans-serif;color:var(--chrome-1);font-size:13.5px;}
 
   /* ---------- panels ---------- */
@@ -368,8 +371,10 @@
 
   @media (max-width:700px){
     #app-screen{padding:14px 10px 50px;}
-    .app-header{padding:12px 14px;}
-    .header-title{font-size:18px;}
+    .app-header{padding:12px 14px;align-items:flex-start;}
+    .header-left{width:100%;align-items:flex-start;flex-wrap:wrap;}
+    .header-title{font-size:18px;white-space:normal;overflow:visible;text-overflow:clip;line-height:1.08;overflow-wrap:anywhere;}
+    .role-pill{white-space:normal;overflow-wrap:anywhere;line-height:1.25;text-align:center;}
     .brand-logo-img.small{width:32px;height:32px;}
     .user-chip{width:100%;justify-content:space-between;}
     .month-nav{justify-content:center;}
@@ -381,6 +386,17 @@
     .match-card.ticker-item{width:210px;}
     .fname{font-size:11px;}
     .match-type-belt{font-size:11.5px;}
+    .panel{padding:16px 12px 18px;}
+    .panel h3,.panel .panel-sub{overflow-wrap:anywhere;}
+    .dayview-row{align-items:flex-start;flex-wrap:wrap;}
+    .dayview-row .btn{margin-left:auto;}
+    .my-slot-row{align-items:flex-start;}
+    .match-banner,.match-card{padding-left:12px;padding-right:12px;}
+    .fighter-row{align-items:flex-start;}
+    .fname,.ftime{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;line-height:1.15;}
+    .pair-row{align-items:flex-start;}
+    .team-toggle{margin-left:auto;flex-wrap:wrap;}
+    .approve-bar .btn{width:100%;}
   }
   @media (max-width:420px){
     .row2{grid-template-columns:1fr;}
@@ -390,6 +406,27 @@
     .month-label{font-size:16px;min-width:0;}
     .login-card{padding:28px 20px 24px;}
     .brand-title{font-size:21px;}
+    .app-header{padding:11px 12px;}
+    .header-left{gap:9px;}
+    .header-left > div{min-width:0;flex:1;}
+    .role-pill{display:inline-block;margin-top:5px;}
+    .user-chip{align-items:stretch;}
+    .user-name{min-width:0;flex:1;overflow-wrap:anywhere;align-self:center;}
+    .user-chip .btn{flex:0 0 auto;}
+    .month-nav{display:grid;grid-template-columns:auto minmax(0,1fr) auto;width:100%;gap:8px;}
+    .month-nav .month-label{width:100%;overflow-wrap:anywhere;}
+    .month-nav #refresh-btn{grid-column:1 / -1;width:100%;}
+    .matchup-body{gap:6px;}
+    .fighter-row{gap:6px;padding:6px;}
+    .avatar{width:24px;height:24px;}
+    .vs-badge{width:30px;height:30px;font-size:10.5px;}
+    .modal{padding:18px 14px;}
+    .modal-actions .btn{width:100%;flex-basis:100%;}
+    .my-slot-row .btn,.dayview-row .btn{width:100%;margin-left:0;}
+    .pair-row{gap:8px;padding:9px;}
+    .pair-row .meta{flex-basis:calc(100% - 28px);}
+    .team-toggle{width:100%;margin-left:25px;}
+    .team-btn{flex:1;}
   }
 </style>
 </head>
